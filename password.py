@@ -6,12 +6,14 @@ def encode(password):
         new_digit = str(int(i) + 3)
         encoded_password += new_digit
     return encoded_password
-def decode(password):
-    decoded_password = ""
-    for i in password:
-        new_digit = str(int(i) - 3)
-        decoded_password += new_digit
-    return decoded_password
+
+def decode(input_str):
+    new_str = ""
+
+    for i in range(len(input_str)):
+        new_str += str((int(input_str[i]) - 3) % 10)
+
+    return new_str
 
 while True:
     print("\nMenu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
